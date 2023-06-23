@@ -1,0 +1,15 @@
+# Config file for text_search
+
+# if you want another editor, change the commented out lines below. 
+EDITOR=/usr/bin/vim
+# EDITOR=/usr/bin/nano
+# EDITOR=/usr/bin/vi
+# EDITOR=/usr/bin/joe
+
+# Where the text files containing contact info and calendar are located. One line per entry.
+# On the old Tandy machines files were hard-coded as ADRS.DO and NOTE.DO
+ADRS_DATA=$HOME/.text_search/ADRS.DO
+SCHDL_DATA=$HOME/.text_search/NOTE.DO
+
+# GREP_CMD where grep lives on your system
+GREP_CMD=/usr/bin/grep
