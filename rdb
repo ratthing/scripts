@@ -1,0 +1,29 @@
+#!/bin/bash
+CURRENT_PATH=`pwd`
+CURRENT_DIR=`basename "$CURRENT_PATH"`
+PARENT_DIR=`dirname "$CURRENT_PATH"`
+if [ "$(ls -A $CURRENT_PATH)" ]; then
+   echo " "
+   echo -e " \033[1m> [ $PARENT_DIR ] => [ $CURRENT_DIR ]\033[0m " 
+   echo " "
+   ls $CURRENT_PATH/*/ >/dev/null 2>&1 ;
+   if [ $? == 0 ]; then
+      ls -d */ 
+   else
+      echo "This node has no child nodes" 
+   fi
+   echo " "
+   echo -e " \033[1mv [ Resources ]\033[0m "
+   echo " "
+   for f in *; do
+      [[ -f "$f" ]] && echo "$f"
+   done
+   echo " "
+else
+   echo " "
+   echo -e " \033[1m> [ $PARENT_DIR ] => [ $CURRENT_DIR ]\033[0m "
+   echo " "
+   echo " This node no child nodes or resources"
+   echo " "
+fi
+exit 0

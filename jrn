@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# jrn - Bash script to maintain a journal
+# Written by Ray Lopez (rl@well.com)
+
+EDITOR_COMMAND="/usr/bin/vim '+normal Go' "
+JOURNAL_FILE_NAME=$HOME/Nextcloud/Notes/nb/jrn/journal.txt
+JOURNAL_TIME_STAMP_FORMAT="%G %b %d %T %Z"
+JOURNAL_TIME_STAMP=$(/bin/date "+$JOURNAL_TIME_STAMP_FORMAT")
+
+/bin/echo -e "=== $JOURNAL_TIME_STAMP ===\n" >> $JOURNAL_FILE_NAME
+
+#Launch the text editor with the new text file
+CMD="$EDITOR_COMMAND $JOURNAL_FILE_NAME"
+eval $CMD
+/bin/echo -e "\n" >> $JOURNAL_FILE_NAME
+
+#Exit cleanly
+exit 0

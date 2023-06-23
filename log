@@ -1,0 +1,15 @@
+#!/bin/sh
+
+LOGFILE=$HOME/Nextcloud/Notes/nb/jrn/journal.txt
+TIMESTAMP=$(date "+%G-%m-%d %T")
+INPUT_STRING="$*"
+
+if [[ "$INPUT_STRING" != "" ]]; then
+	/bin/echo $TIMESTAMP" "$INPUT_STRING >> $LOGFILE
+else
+	/bin/echo -e "Logfile: $LOGFILE\n"
+	/usr/bin/cat $LOGFILE
+	/bin/echo -e " \nUsage: log <String to be entered to log file>"
+fi
+
+exit 0
