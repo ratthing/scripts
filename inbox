@@ -1,0 +1,7 @@
+#!/bin/sh
+INBOX_FILE=$HOME/Nextcloud/gtd-cli/inbox.txt
+TIMESTAMP=$(date)
+echo "--[ $TIMESTAMP ]---------------------------------------" >> $INBOX_FILE
+echo "" >> $INBOX_FILE
+/usr/bin/vim '+ normal GA' -c 'startinsert' $INBOX_FILE
+exit 0
