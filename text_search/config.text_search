@@ -1,4 +1,5 @@
 # Config file for text_search
+# Rename this file to config and place it in $HOME/.text_search/
 
 # if you want another editor, change the commented out lines below. 
 EDITOR=/usr/bin/vim
